@@ -23,8 +23,8 @@
   --muted-light: rgba(246, 242, 234, 0.72);
   --shadow: 0 24px 60px -24px rgba(24, 21, 18, 0.35);
   --radius: 18px;
-  --font-display: "Fraunces", "Georgia", serif;
-  --font-body: "Archivo", "Helvetica Neue", sans-serif;
+  --font-display: "Plus Jakarta Sans", "Helvetica Neue", sans-serif;
+  --font-body: "Inter", "Helvetica Neue", sans-serif;
   --gutter: clamp(1.25rem, 4vw, 3rem);
   --section: clamp(4.5rem, 9vw, 8rem);
 }
@@ -53,10 +53,17 @@ ul { list-style: none; }
 
 /* ---------- type ---------- */
 
-h1, h2, h3, .display {
+h1, h2, .display {
   font-family: var(--font-display);
-  font-weight: 500;
-  line-height: 1.06;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
   letter-spacing: -0.015em;
 }
 
@@ -108,7 +115,7 @@ h1, h2, h3, .display {
 .section { padding-block: var(--section); }
 
 .section-head { max-width: 780px; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
-.section-head h2 { font-size: clamp(2rem, 4.4vw, 3.4rem); margin-bottom: 1.1rem; }
+.section-head h2 { font-size: clamp(1.85rem, 4vw, 2.9rem); margin-bottom: 1.1rem; }
 .section-head.center { margin-inline: auto; text-align: center; }
 .section-head.center .eyebrow { justify-content: center; }
 
@@ -154,9 +161,9 @@ h1, h2, h3, .display {
 .brand img { width: 34px; height: auto; }
 .brand .word {
   font-family: var(--font-display);
-  font-size: 1.45rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   line-height: 1;
 }
 .brand .word small {
@@ -274,7 +281,9 @@ h1, h2, h3, .display {
 .mobile-menu-open .mobile-menu { opacity: 1; visibility: visible; }
 .mobile-menu a {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 8vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: clamp(1.9rem, 7.5vw, 2.6rem);
   padding: 0.45rem 1rem;
   display: inline-block;
   transition: color 0.25s ease;
@@ -327,8 +336,8 @@ body.mobile-menu-open { overflow: hidden; }
 }
 
 .hero h1 {
-  font-size: clamp(2.6rem, 6.6vw, 5.2rem);
-  max-width: 15ch;
+  font-size: clamp(2.3rem, 5.8vw, 4.4rem);
+  max-width: 16ch;
   min-height: 2.2em;
 }
 .hero h1 .swap { display: block; }
@@ -407,7 +416,7 @@ body.mobile-menu-open { overflow: hidden; }
   background: linear-gradient(200deg, rgba(24,21,18,0.2) 0%, rgba(24,21,18,0.66) 70%, rgba(24,21,18,0.85) 100%);
 }
 .page-hero .wrap { padding-block: 7rem 3.2rem; }
-.page-hero h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); max-width: 16ch; }
+.page-hero h1 { font-size: clamp(2.2rem, 5.2vw, 4rem); max-width: 18ch; }
 .page-hero p { margin-top: 1rem; max-width: 56ch; color: var(--muted-light); }
 
 /* plain (no photo) page hero */
@@ -438,8 +447,9 @@ body.mobile-menu-open { overflow: hidden; }
 .stat b {
   display: block;
   font-family: var(--font-display);
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  font-weight: 500;
+  font-size: clamp(2rem, 3.6vw, 2.9rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--gold-deep);
 }
 .stat span {
@@ -485,7 +495,8 @@ body.mobile-menu-open { overflow: hidden; }
 .pillar .body { padding: 1.8rem; width: 100%; }
 .pillar .num {
   font-family: var(--font-display);
-  font-size: 1rem;
+  font-weight: 700;
+  font-size: 0.95rem;
   color: var(--gold-soft);
   letter-spacing: 0.08em;
 }
@@ -518,7 +529,8 @@ body.mobile-menu-open { overflow: hidden; }
 }
 .why .num {
   font-family: var(--font-display);
-  font-size: 2.6rem;
+  font-weight: 700;
+  font-size: 2.4rem;
   color: var(--gold-soft);
   display: block;
   margin-bottom: 1.2rem;
@@ -553,7 +565,7 @@ body.mobile-menu-open { overflow: hidden; }
   border-radius: 999px;
   backdrop-filter: blur(6px);
 }
-.feature h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.2rem; }
+.feature h2 { font-size: clamp(1.8rem, 3.6vw, 2.7rem); margin-bottom: 1.2rem; }
 .feature .body > p { margin-bottom: 1.1rem; color: var(--muted); }
 .on-dark .feature .body > p { color: var(--muted-light); }
 
@@ -635,7 +647,7 @@ body.mobile-menu-open { overflow: hidden; }
     radial-gradient(600px 300px at 12% 115%, rgba(191,78,36,0.35), transparent 70%),
     radial-gradient(600px 300px at 88% -15%, rgba(216,178,92,0.28), transparent 70%);
 }
-.cta-band h2 { font-size: clamp(2rem, 4.6vw, 3.4rem); max-width: 20ch; margin-inline: auto; }
+.cta-band h2 { font-size: clamp(1.85rem, 4vw, 2.9rem); max-width: 22ch; margin-inline: auto; }
 .cta-band p { margin: 1.1rem auto 2rem; max-width: 52ch; color: var(--muted-light); }
 
 /* ---------- event mosaic (services) ---------- */
@@ -749,8 +761,8 @@ body.mobile-menu-open { overflow: hidden; }
 .brand-chip img.pad { max-height: 96px; }
 .brand-chip .name {
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 .brand-chip .name.schweppes { letter-spacing: 0.04em; font-style: italic; }
 .brand-chip .name.vanish { color: #d5578f; font-weight: 600; }
@@ -789,8 +801,9 @@ body.mobile-menu-open { overflow: hidden; }
 .step { display: flex; gap: 1.1rem; padding-block: 0.85rem; }
 .step .n {
   font-family: var(--font-display);
+  font-weight: 700;
   color: var(--gold-deep);
-  font-size: 1.05rem;
+  font-size: 1rem;
   flex: none;
   width: 2ch;
 }
@@ -817,7 +830,8 @@ body.mobile-menu-open { overflow: hidden; }
   display: grid;
   place-items: center;
   font-family: var(--font-display);
-  font-size: 5rem;
+  font-weight: 800;
+  font-size: 4.6rem;
   color: var(--gold-soft);
   background:
     radial-gradient(340px 340px at 50% 20%, rgba(216,178,92,0.16), transparent 70%),
@@ -850,10 +864,11 @@ body.mobile-menu-open { overflow: hidden; }
 .golf-day:hover { background: var(--cream); padding-left: 1rem; }
 .golf-day .year {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-weight: 700;
+  font-size: 1.1rem;
   color: var(--gold-deep);
 }
-.golf-day h3 { font-size: clamp(1.25rem, 2.4vw, 1.7rem); font-weight: 500; }
+.golf-day h3 { font-size: clamp(1.2rem, 2.3vw, 1.6rem); font-weight: 600; }
 .golf-day p { color: var(--muted); font-size: 0.95rem; margin-top: 0.25rem; }
 .golf-day .badge {
   font-size: 0.72rem;
