@@ -934,6 +934,12 @@ body.mobile-menu-open { overflow: hidden; }
 .gallery a:hover::after { opacity: 1; }
 .gallery a.hidden { display: none; }
 
+/* touch devices get permanent captions (no hover available) */
+@media (hover: none) {
+  .gallery a::after { opacity: 1; }
+  .mosaic figure img { transform: none !important; }
+}
+
 /* lightbox */
 .lightbox {
   position: fixed;
