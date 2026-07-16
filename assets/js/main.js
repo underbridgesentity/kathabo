@@ -1,5 +1,5 @@
 /* ============================================================
-   Kathabo Group — site behaviour
+   Kathabo Group site behaviour
    ============================================================ */
 
 (function () {
@@ -203,7 +203,7 @@
         return;
       }
 
-      const subject = encodeURIComponent("Website enquiry — " + first + " " + last);
+      const subject = encodeURIComponent("Website enquiry: " + first + " " + last);
       const body = encodeURIComponent(
         "Name: " + first + " " + last + "\n" +
         "Email: " + email + "\n" +
