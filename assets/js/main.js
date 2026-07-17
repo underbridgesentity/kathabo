@@ -48,57 +48,19 @@
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 
-  /* ---------- hero slideshow (home) ---------- */
+  /* ---------- hero slideshow (home): slow background fade, static copy ---------- */
   const hero = document.getElementById("hero");
   if (hero) {
     const slides = hero.querySelectorAll(".slide");
-    const headline = document.getElementById("heroHeadline");
-    const sub = document.getElementById("heroSub");
-    const dotsWrap = document.getElementById("heroDots");
-
-    const lines = [
-      ["We create immersive brand experiences", "Integrated event production, strategic marketing and targeted media that bring your vision to life."],
-      ["We tell stories that resonate", "From live activations to digital campaigns, we connect you with your audience."],
-      ["We elevate brands through unforgettable moments", "Conference activations, bespoke content and powerful media partnerships."],
-      ["We drive engagement from start to finish", "Seamless planning, flawless execution and measurable media impact."],
-      ["We deliver results that last", "Data-driven marketing, live events and media strategies working together."],
-    ];
-
-    let current = 0;
-    let timer = null;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    slides.forEach((_, i) => {
-      const b = document.createElement("button");
-      b.setAttribute("aria-label", "Go to slide " + (i + 1));
-      if (i === 0) b.classList.add("active");
-      b.addEventListener("click", () => {
-        go(i);
-        restart();
-      });
-      dotsWrap.appendChild(b);
-    });
-    const dots = dotsWrap.querySelectorAll("button");
-
-    function go(i) {
-      current = i % slides.length;
-      slides.forEach((s, k) => s.classList.toggle("active", k === current));
-      dots.forEach((d, k) => d.classList.toggle("active", k === current));
-      const [h, p] = lines[current % lines.length];
-      headline.textContent = h;
-      sub.textContent = p;
-      if (!reduceMotion) {
-        headline.classList.remove("swap-enter");
-        void headline.offsetWidth; /* restart animation */
-        headline.classList.add("swap-enter");
-      }
+    if (slides.length > 1 && !reduceMotion) {
+      let current = 0;
+      setInterval(() => {
+        slides[current].classList.remove("active");
+        current = (current + 1) % slides.length;
+        slides[current].classList.add("active");
+      }, 8000);
     }
-
-    function restart() {
-      if (timer) clearInterval(timer);
-      if (!reduceMotion) timer = setInterval(() => go(current + 1), 6500);
-    }
-    restart();
   }
 
   /* ---------- gallery filter + lightbox (golf) ---------- */
