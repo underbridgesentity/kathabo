@@ -23,6 +23,12 @@
     document.querySelectorAll(".mobile-menu a").forEach((a) =>
       a.addEventListener("click", () => document.body.classList.remove("mobile-menu-open"))
     );
+    const menu = document.getElementById("mobileMenu");
+    if (menu) {
+      menu.addEventListener("click", (e) => {
+        if (e.target === menu) document.body.classList.remove("mobile-menu-open");
+      });
+    }
   }
 
   /* ---------- reveal on scroll ---------- */
